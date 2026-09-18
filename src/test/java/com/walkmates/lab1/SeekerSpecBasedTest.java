@@ -57,7 +57,6 @@ void validEmailIsAccepted() {
 @Test
 @DisplayName("Invalid email is rejected at registration")
 void invalidEmailIsRejected() {
-        Seeker seeker = new Seeker("exampel@exampel.com", "Sam", "0707654321");
         assertThrows(IllegalArgumentException.class,
                 () -> new Seeker("not-an-email", "Sam", "0707654321"));
 }
