@@ -87,7 +87,6 @@ void validPhoneNumberIsAccepted(){
 @Test
 @DisplayName("Invalid phone number is rejected at registration")
 void invalidPhoneNumberIsRejected(){
-    Seeker seeker = new Seeker("exampel@exampel.com", "ThisIsCorrect", "07045672198436");
     assertThrows(IllegalArgumentException.class, () -> new Seeker("exampel@exampel.com", "ThisIsCorrect", "07045672198436"));
 }
 
