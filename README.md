@@ -17,6 +17,16 @@ application code and UI may continue to evolve as long as the frozen behavior un
 preserved. See [`LAB_MATERIAL_VERSION.md`](LAB_MATERIAL_VERSION.md) for the policy and release
 notes.
 
+## Unit testing, coverage and test doubles
+
+Explore unit testing, Arrange–Act–Assert, fixtures, parameterization, and structural coverage
+using the real pet catalog. Start with [test-examples/README.md](test-examples/README.md),
+then read the commented tests alongside the production code.
+For Mockito, use [the test-doubles guide](test-examples/DOUBLES.md). It demonstrates service
+isolation with partial success/decline examples; students complete the remaining Activity 4.2 cases.
+Run `mvn -Pexamples clean test` to select these examples and write separate reports under
+`target/examples/`. Normal lab commands and their test sources remain unchanged.
+
 ## Quick start
 
 ```bash

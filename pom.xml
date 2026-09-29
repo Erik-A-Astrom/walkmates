@@ -34,6 +34,9 @@
         <!-- Surefire expands this late so JaCoCo can add its agent first. Keep it defined for
              test runs where JaCoCo is not active. -->
         <argLine></argLine>
+        <!-- The opt-in examples profile uses separate test sources and output. -->
+        <walkmates.testSourceDirectory>${project.basedir}/src/test/java</walkmates.testSourceDirectory>
+        <walkmates.buildDirectory>${project.basedir}/target</walkmates.buildDirectory>
 
         <!-- Build and quality tooling versions -->
         <maven.enforcer.version>3.6.3</maven.enforcer.version>
@@ -76,6 +79,8 @@
     </dependencies>
 
     <build>
+        <directory>${walkmates.buildDirectory}</directory>
+        <testSourceDirectory>${walkmates.testSourceDirectory}</testSourceDirectory>
         <plugins>
             <!-- Fail early with a useful message instead of opaque JaCoCo/Mockito errors when
                  Maven is launched with an unsupported JDK. -->
@@ -204,4 +209,13 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>examples</id>
+            <properties>
+                <walkmates.testSourceDirectory>${project.basedir}/test-examples</walkmates.testSourceDirectory>
+                <walkmates.buildDirectory>${project.basedir}/target/examples</walkmates.buildDirectory>
+            </properties>
+        </profile>
+    </profiles>
 </project>
