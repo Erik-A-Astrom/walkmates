@@ -3,6 +3,7 @@ package com.walkmates.service;
 import com.walkmates.model.Seeker;
 import com.walkmates.repository.SeekerRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.event.TransactionalEventListener;
 
 /**
  * Registration and wallet operations for {@link Seeker}s.
@@ -50,4 +51,7 @@ public class SeekerService {
         seeker.addFunds(amount);
         return seekers.save(seeker);
     }
+
+
+
 }
